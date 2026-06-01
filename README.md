@@ -23,3 +23,5 @@ Virtual environment setup:
 ```bash
 source .venv/bin/activate
 ```
+
+.ipynb notebooks availible in /notebooks directory
