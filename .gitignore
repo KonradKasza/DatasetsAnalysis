@@ -9,8 +9,13 @@ wheels/
 # Virtual environments
 .venv
 
+#.csv files
+data/*
+!data/.gitkeep
+
+#non-relevant
 ed.pdf
 
-#macos
+#macos files
 .DS_store
 .python-version
