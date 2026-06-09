@@ -20,6 +20,8 @@ def clean_and_resample_data(df):
     df_cleaned = df_cleaned.drop(columns=['Date', 'Time'])
     df_cleaned = df_cleaned.dropna()
     df_resampled = df_cleaned.resample('H').mean()
+    df_resampled = df_resampled.dropna()  # ← FIX: usunięcie NaN po resampligu
+
     df_resampled['Hour'] = df_resampled.index.hour
     df_resampled['Day_of_week'] = df_resampled.index.dayofweek
     df_resampled['Is_Weekend'] = df_resampled.index.dayofweek.isin([5, 6]).astype(int)
