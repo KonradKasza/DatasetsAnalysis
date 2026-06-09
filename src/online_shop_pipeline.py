@@ -16,7 +16,7 @@ def clean_data(df):
     df_cleaned['Informational_Duration'] = np.where(df_cleaned['Informational_Duration'] > 3600, 3600, df_cleaned['Informational_Duration'])
     df_cleaned['Weekend'] = df_cleaned['Weekend'].astype(int)
     df_cleaned['Revenue'] = df_cleaned['Revenue'].astype(int)
-    df_cleaned = pd.get_dummies(df_cleaned, columns=['Month', 'VisitorType'], drop_first=True)
+    df_cleaned = pd.get_dummies(df_cleaned, columns=['Month', 'VisitorType'], drop_first=True,dtype=int)
     return df_cleaned
 
 def save_data(df, filepath):
